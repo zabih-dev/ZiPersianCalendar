@@ -1,13 +1,15 @@
 # ZiPersianCalendar
 
-A simple and flexible Persian Calendar library for Android that supports lower SDK levels.
+A simple and flexible **Persian Calendar** library for **Android**
+that helps developers easily manage and convert **Persian dates**.
 
 ## Features
 
 - No dependencies
 - Supports lower SDK levels
 - Easily set dates, manage time fields, and add calendar fields
-- Simple API to work with Persian (Jalali / Shamsi) dates
+- Handles leap years in the Persian calendar system
+- Simple API to work with **Persian dates (Jalali / Shamsi dates)**
 
 ## Setup
 
@@ -15,7 +17,25 @@ To add this library to your project, follow the instructions below.
 
 ### Step 1: Add JitPack to Your Project
 
-Add the JitPack repository to your root `build.gradle` at the end of repositories:
+Add the JitPack repository to your root `build.gradle` or `settings.gradle.kts` at the end of repositories:
+
+#### Kotlin Script (settings.gradle.kts)
+
+```gradle
+dependencyResolutionManagement {
+    ...
+    repositories {
+        google()
+        mavenCentral()
+        // Add this
+        maven {
+            url = uri("https://jitpack.io")
+        }
+    }
+}
+```
+
+#### Groovy (build.gradle):
 
 ```gradle
 allprojects {
@@ -30,8 +50,20 @@ allprojects {
 
 Add the following dependency to your app's `build.gradle` file:
 
+#### Kotlin Script (build.gradle.kts)
+
 ```gradle
 dependencies {
+    ...
+    implementation("com.github.zabih-dev:ZiPersianCalendar:1.0.0")
+}
+```
+
+#### Groovy (build.gradle):
+
+```gradle
+dependencies {
+    ...
     implementation 'com.github.zabih-dev:ZiPersianCalendar:1.0.0'
 }
 ```
